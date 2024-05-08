@@ -8,5 +8,6 @@ export interface Trekk {
     charges: number,
     noOfPeople: number,
     totalCharges: number,
+    image:string
 }
 
