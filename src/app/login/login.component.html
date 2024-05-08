@@ -1,29 +1,21 @@
-<div class="  d-flex justify-content-center align-items-center vh-100 bg-secondary">
-    <div class="form_container p-5 rounded bg-white">
-        <form (ngSubmit)="Login()">
-            <h1 class="text-center m-2 p-3">Sign In</h1>
-            <div class="col m-3">
-                <label htmlFor="Username" class="m-2">Enter Username:</label>
-                <input type="text" formControlName="username" id="Username" placeholder="eg. Supriya" class="form-control"  />
-
-            </div>
-            <div class="col m-3">
-                <label htmlFor="Password" class="m-2">Enter Password:</label>
-                <input type="password" formControlName="password" id="Password" placeholder="eg. Supriya@123"
-                    class="form-control"  />
-            </div>
-            <div class="d-grid m-4">
-                <input type="submit" class="btn btn-success" value="Login" />
-            </div><br />
-        
-
-            <div class="signup">
-                <span class="signup" >Don't have an Account? 
-                </span>
-                <a routerLink="/TrekkerRegister"> SignUp</a>
-            </div>
-
-
-        </form>
+<div class="container p-5 mt-sm-5">
+    <div class="row my-sm-5">
+      <div class="col-12 col-lg-5">
+        <img src=" " alt="" class="img-fluid">
+      </div>
+      <div class="offset-lg-1 col-12 col-lg-6">
+        <div class="display-3 text-center mb-5 text-success">Welcome Back</div>
+        <div class="mb-4 lead">
+          <label for="staticEmail" class="col-form-label">Email</label>
+          <input [(ngModel)]="loginDetails.email" type="text" class="form-control" id="staticEmail">
+        </div>
+        <div class="mb-4 lead">
+          <label for="inputPassword" class="col-form-label">Password</label>
+          <input [(ngModel)]="loginDetails.password" type="password" class="form-control" id="inputPassword">
+        </div>
+        <div class="text-center">
+          <button class="btn btn-outline-success" (click)="handleLogin()">Login</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
