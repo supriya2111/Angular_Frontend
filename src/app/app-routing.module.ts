@@ -33,7 +33,7 @@ const routes: Routes = [
     path: "signup", component: SignupComponent
   },
   {
-    path: "update/:trekkNumber",
+    path: "trekks/update/:trekkNumber",
     component: TrekkUpdateComponent,
     canActivate: [AddTrekkGuard]
 }

@@ -6,7 +6,7 @@
 <div class="container" [hidden]="!listLoaded">
     <div class="img-holder">
         <div class="row my-5 blur px-4 rounded border">
-            <div class="text-center display-5 my-4">List of All Trekks</div>
+            <div class="text-center display-5 my-4">Upcoming Trekks</div>
             <app-trekk-card [trekkList]="trekkList" (trekkToDelete)="deleteTrekk($event)"></app-trekk-card>
         </div>
     </div>

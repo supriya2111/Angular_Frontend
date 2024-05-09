@@ -52,7 +52,7 @@ export class TrekksComponent implements OnInit {
   }
 
   deleteTrekk(id: number) {
-    var answer: boolean = confirm("Do you wish to Delete Recipe?");
+    var answer: boolean = confirm("Do you want to Delete Trekk?");
     if (answer) {
       this.trekkService.deleteTrekk(id).subscribe(
         result => {

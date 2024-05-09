@@ -12,7 +12,7 @@ import { TrekkService } from 'src/services/trekk.service';
 export class TrekkCardComponent implements OnInit {
   
   @Input()
-  trekkList!: Trekk[];
+  trekkList: Trekk[] =[];
 
   @Output() trekkToDelete : EventEmitter<number>  = new EventEmitter<number>()
 
@@ -24,6 +24,11 @@ export class TrekkCardComponent implements OnInit {
   list!: Trekk[];
   
   ngOnInit() {
+    console.log(this.trekkList.map((val)=>{
+        console.log("Value"+val);
+        
+    }));
+    
   }
 
   deleteTrekk(id:number){

@@ -17,7 +17,7 @@ export class TrekkDataComponent implements OnInit {
 
   ngOnInit() {
     var trekkId !:number;;
-    this.route.params.subscribe((params) => { trekkId = params['trekkNUmber']} );
+    this.route.params.subscribe((params) => { trekkId = params['trekkNumber']} );
     this.trekkService.getTrekkById(trekkId).subscribe((trekk) => {
       this.trekkData = trekk;
     

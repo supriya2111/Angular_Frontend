@@ -4,7 +4,7 @@
         <img src={{trekk.image}} class="img-fluid" alt="...">
         <div class="card-body">
           <h5 class="card-title">
-            {{trekk.trekkName}}
+             {{trekk.trekkName}}
           </h5>
       </div>
       <ul class="list-group list-group-flush">
@@ -19,17 +19,17 @@
         </li>
 
         <li class="list-group-item">
-          Trekk Date : {{trekk.trekkDate}} 
+          Trekk Date : {{trekk.trekkDate |date}} 
           </li>
           <li class="list-group-item">
-           Charges : {{trekk.charges}} 
+           Charges : {{trekk.charges }} 
           </li>
       </ul>
       <div class="card-body text-center">
         <!-- Router Link to send the id with the Route so that the next component can use it -->
-        <button class="btn btn-outline-success m-1" [routerLink]="['/trekks',trekk.id]">View Trekk</button>
+        <button class="btn btn-outline-success m-1" [routerLink]="['/trekks/'+trekk.id]">View Trekk</button>
         <button [hidden]="!loginService.isLoggedIn" class="btn btn-danger m-1" (click)="deleteTrekk(trekk.id)" >Delete</button>
-        <button [hidden]="!loginService.isLoggedIn" class="btn btn-outline-warning m-1" [routerLink]="['/update',trekk.id]">Update</button>
+        <button [hidden]="!loginService.isLoggedIn" class="btn btn-outline-warning m-1" [routerLink]="['/trekks/update/'+trekk.id]">Update</button>
       </div>
     </div>
   </div>
