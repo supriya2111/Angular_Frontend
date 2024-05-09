@@ -1,0 +1,59 @@
+<div class="d-flex justify-content-center align-items-center h-75"
+    *ngIf="trekkData == null || trekkData == undefined">
+    <div class="spinner-grow text-success" role="status">
+    </div>
+</div>
+
+<div class="container my-5 p-5 bg-light rounded-4" *ngIf="trekkData != null || trekkData!= undefined ">
+    <div class="text-success display-5 text-center mb-5">
+        {{trekkData.trekkName}}
+    </div>
+    <div class="row">
+        <!-- Left Side -->
+        <div class="col-12 col-sm-12 col-md-4 my-3">
+            <img src={{trekkData.image}} class="img-fluid rounded" alt="">
+            <div class="border p-3 rounded bg-white mt-4 mb-2">
+                <div class="lead mb-3">Ingredients : </div>
+                <!-- <mat-chip-list>
+                    <mat-chip *ngFor="let ingredient of recipeData.ingredients">{{ingredient}}</mat-chip>
+                </mat-chip-list> -->
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="col-12 col-sm-12 col-md-8 ps-md-5">
+            <!-- Instructions -->
+            <div class="mb-2 p-sm-3">
+                <div class="lead fs-4 mb-2">Instructions : </div>
+                <div>
+                    <ol class="fs-6 bg-white list-group list-group-numbered">
+                        <li class="list-group-item text-muted" ></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Other Details -->
+            <div class="accordion mt-4 mt-sm-2 p-sm-3" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            Other Details
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                        
+                            <div class="my-2">Trekking Point  : {{trekkData.trekkingPoint}} cal</div>
+                            <div class="my-2"> City : {{trekkData.city}} minutes</div>
+                            <div class="my-2">Pickup Point  : {{trekkData.pickupPoint}} minutes</div>
+                            <div class="my-2">Trekk Date : {{trekkData.trekkDate}}</div>
+                            <div class="my-2">Charges : {{trekkData.charges}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

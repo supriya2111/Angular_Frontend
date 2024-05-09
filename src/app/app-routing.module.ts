@@ -6,6 +6,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddTrekkGuard } from './guards/add-trekk.guard';
 import { TrekksComponent } from './trekks/trekks.component';
+import { TrekkDataComponent } from './trekks/trekk-data/trekk-data.component';
+import { TrekkUpdateComponent } from './trekks/trekk-update/trekk-update.component';
+import { TrekkRoutingModule } from './trekks/trekk.routing.module';
 
 const routes: Routes = [
   {
@@ -15,19 +18,29 @@ const routes: Routes = [
     path: "trekks",component:TrekksComponent
   },
   {
-    path:'trekks/add', component:AddTrekkComponent,
-    canActivate: [AddTrekkGuard]
+    path:"trekks/add", component:AddTrekkComponent
+  
   },
+  {
+    // This is dynamic path, which takes recipeNumber dynamically and sends it to the Component
+    path: "trekks/:trekkNumber",
+    component: TrekkDataComponent
+},
   {
     path:"login" ,component:LoginComponent
   },
   {
     path: "signup", component: SignupComponent
-  }
+  },
+  {
+    path: "update/:trekkNumber",
+    component: TrekkUpdateComponent,
+    canActivate: [AddTrekkGuard]
+}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule, TrekkRoutingModule]
 })
 export class AppRoutingModule { }

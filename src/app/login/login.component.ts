@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
   
   handleLogin(){
     this.loginService.checkLogin(this.loginDetails.email, this.loginDetails.password);
+    console.log(this.loginDetails.email, this.loginDetails.password);
+    
     if(this.loginService.isLoggedIn)
       this.router.navigateByUrl("/trekks");
     else

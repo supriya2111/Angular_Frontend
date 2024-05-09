@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+handleSignUp() {
+throw new Error('Method not implemented.');
+}
 
+  signUpDetails = {
+    name : "",
+    email : "",
+    password : ""
+  }
+  
   constructor() { }
 
   ngOnInit(): void {

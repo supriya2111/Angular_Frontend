@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +10,12 @@ import { AddTrekkComponent } from './trekks/add-trekk/add-trekk.component';
 import { SignupComponent } from './signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
+import { TrekkCardComponent } from './trekks/trekk-card/trekk-card.component';
+import { TrekkDataComponent } from './trekks/trekk-data/trekk-data.component';
+import { TrekkUpdateComponent } from './trekks/trekk-update/trekk-update.component';
+import { RouterModule } from '@angular/router';
+import { APP_CONFIG, APP_SERVICE_CONFIG } from './app.config';
+import { InitService } from './init.service';
 
 
 
@@ -21,7 +27,10 @@ import { LoginComponent } from './login/login.component';
     AddTrekkComponent,
     SignupComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    TrekkCardComponent,
+    TrekkDataComponent,
+    TrekkUpdateComponent
    
   ],
   imports: [
@@ -29,9 +38,16 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_SERVICE_CONFIG,
+      useValue: APP_CONFIG
+    },
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

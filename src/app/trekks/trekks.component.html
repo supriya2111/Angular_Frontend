@@ -1,1 +1,14 @@
-<p>trekks works!</p>
+<div class="d-flex justify-content-center align-items-center h-75" *ngIf="trekkList == null || trekkList == undefined">
+    <div class="spinner-grow text-success" role="status">
+    </div>
+</div>
+
+<div class="container" [hidden]="!listLoaded">
+    <div class="img-holder">
+        <div class="row my-5 blur px-4 rounded border">
+            <div class="text-center display-5 my-4">List of All Trekks</div>
+            <app-trekk-card [trekkList]="trekkList" (trekkToDelete)="deleteTrekk($event)"></app-trekk-card>
+        </div>
+    </div>
+</div>
+

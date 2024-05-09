@@ -1,13 +1,11 @@
 export interface Trekk {
     id: number,
-    trekkname: string,
+    trekkName: string,
     trekkingPoint: string,
     city: string,
     pickupPoint: string,
-    trekkDate: Date,
+    trekkDate: string,
     charges: number,
-    noOfPeople: number,
-    totalCharges: number,
     image:string
 }
 

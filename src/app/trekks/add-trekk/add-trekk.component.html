@@ -1,53 +1,51 @@
 <div class="container ">
-    <div class="col">
-        <h2>Add Trekk</h2>
-        <form action="" class="border m-5 p-5">
+    <div class="col" [ngClass]="formStatus">
+        <h2 class="text-center">Add Trekk</h2>
+        <form (ngSubmit)="onSubmit()"  [formGroup]="reactiveForm"  class="border m-5 p-5">
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" class="form-label">Trekk Name:  </label>
-                    <input type="text" class="form-control">
+                    <label htmlFor="trekkName" >Trekk Name:  </label>
+                    <input type="text"  class="form-control" formControlName="trekkName" id="trekkName" >
                 </div>
                 <div class="col-md-6">
-                    <label for="" class="form-label">Trekk Point: </label>
-                    <input type="text" class="form-control">
+                    <label htmlFor="trekkingPoint" >Trekk Point: </label>
+                    <input type="text"class="form-control" formControlName="trekkingPoint" id="trekkingPoint">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" class="form-label">City:  </label>
-                    <input type="text" class="form-control">
+                    <label htmlFor="city" >City:  </label>
+                    <input type="text"  class="form-control" formControlName="city" id="city">
                 </div>
                 <div class="col-md-6">
-                    <label for="" class="form-label">Pickup Point: </label>
-                    <input type="text" class="form-control">
+                    <label htmlFor="pickupPoint">Pickup Point: </label>
+                    <input type="text"   class="form-control" formControlName="pickupPoint" id="pickupPoint">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" class="form-label">Starting Date:  </label>
-                    <input type="text" class="form-control">
+                    <label htmlFor="trekkDate" >Starting Date:  </label>
+                    <input type="date" class="form-control" formControlName="trekkDate" id="trekkDate">
                 </div>
                 <div class="col-md-6">
-                    <label for="" class="form-label">Charges : </label>
-                    <input type="text" class="form-control">
+                    <label htmlFor="charges" >Charges : </label>
+                    <input type="number"  class="form-control " formControlName="charges" id="charges">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <label for="" class="form-label">No of Peoples:  </label>
-                    <input type="number" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label for="" class="form-label">Total Charges : </label>
-                    <input type="text" class="form-control">
+                <div class="col-12 col-sm-6 my-2">
+                   
+                        <label htmlFor="image">Image<span class="text-danger"> *</span></label>
+                        <input type="text"  formControlName="image" id="image"
+                            required class="form-control">
                 </div>
             </div>
+            
             <div class="row">
                 
-                <div class="col mt-3">
-                    <button type="button" class="btn btn-primary ">
-                        Submit
-                    </button>
+                <div class="col mt-3 text-center">
+                    <input type="submit" class="btn btn-primary " value="Submit" [disabled]="reactiveForm.invalid">
+                        
                 </div>
                 
             </div>
@@ -55,3 +53,4 @@
 
     </div>
 </div>
+<router-outlet></router-outlet>
