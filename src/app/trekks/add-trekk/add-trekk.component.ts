@@ -4,6 +4,7 @@ import { TrekkService } from 'src/services/trekk.service';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CoreService } from 'src/app/core/core.service';
 
 @Component({
   selector: 'app-add-trekk',
@@ -16,7 +17,7 @@ export class AddTrekkComponent implements OnInit {
   formStatus: any;
   
   
-  constructor( private fb:FormBuilder,private trekkService:TrekkService, private route : Router) { 
+  constructor( private fb:FormBuilder,private trekkService:TrekkService, private route : Router,private coreService:CoreService) { 
     this.reactiveForm = this.fb.group({
     id: 0,
     trekkName: '',
@@ -57,7 +58,8 @@ export class AddTrekkComponent implements OnInit {
      
       this.trekkService.addTrekk(this.reactiveForm.value).subscribe({
         next:(val:any) => {
-          alert("Trekk added successfully")
+         alert("Trekk added successfully")
+          // this.coreService.openSnackBar('employee deleted','done')
           this.route.navigate(['trekks']); 
         },
         error: (err:any) => {

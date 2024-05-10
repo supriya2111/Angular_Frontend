@@ -39,7 +39,9 @@ import { InitService } from './init.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+   
+   
   ],
   providers: [
     {
