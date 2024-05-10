@@ -12,7 +12,6 @@ WORKDIR /app
 COPY . .
 
 # Build the Angular application
-RUN ng build
 
 FROM nginx
 COPY --from=builder /app/dist/* /usr/share/nginx/html
