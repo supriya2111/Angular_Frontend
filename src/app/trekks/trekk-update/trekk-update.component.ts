@@ -31,9 +31,18 @@ export class TrekkUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     var trekkId!: number;
-    this.routeData.params.subscribe((param) => trekkId = param['trekkNumber']);
-    this.trekkService.getTrekkById(trekkId).subscribe((data) => this.trekkData = data);
-    console.log("trekkdata"+this.trekkData);
+    this.routeData.params.subscribe((param) => {
+        trekkId = param['trekkNumber'];
+        console.log("trekk id"+trekkId);
+        
+        this.trekkService.getTrekkById(trekkId).subscribe((data) => {
+            this.trekkData = data;
+            // Assuming trekkData is fetched from the server and contains a date in string format
+            this.trekkData.trekkDate = new Date(this.trekkData.trekkDate).toISOString().split('T')[0];
+
+            console.log("trekkdata", this.trekkData); // Log inside the subscribe to ensure it's logged after data retrieval
+        });
+    });
     
   }
 
@@ -41,7 +50,7 @@ export class TrekkUpdateComponent implements OnInit {
   handleUpdateData() {
     this.trekkService.updateTrekk(this.trekkData).subscribe(
       data => {
-        alert("Recipe Updated")
+        alert("Trekk Updated")
         this.route.navigateByUrl("trekks");
       },
       error => {

@@ -3,7 +3,7 @@
       <div class="card">
         <img src={{trekk.image}} class="img-fluid" alt="...">
         <div class="card-body">
-          <h5 class="card-title">
+          <h5 class="card-title text-center " style="color: rgb(34, 163, 223);">
              {{trekk.trekkName}}
           </h5>
       </div>
@@ -27,8 +27,11 @@
       </ul>
       <div class="card-body text-center">
         <!-- Router Link to send the id with the Route so that the next component can use it -->
-        <button class="btn btn-outline-success m-1" [routerLink]="['/trekks/'+trekk.id]">View Trekk</button>
-        <button [hidden]="!loginService.isLoggedIn" class="btn btn-danger m-1" (click)="deleteTrekk(trekk.id)" >Delete</button>
+        <button class="btn btn-outline-warning m-1" [routerLink]="['/trekks/'+trekk.id]">View Trekk</button>
+        <button mat-fab color="primary" aria-label="Example icon button with a delete icon [hidden]="!loginService.isLoggedIn" (click)="deleteTrekk(trekk.id)"">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <!-- <button [hidden]="!loginService.isLoggedIn" class="btn btn-danger m-1" (click)="deleteTrekk(trekk.id)" >Delete</button> -->
         <button [hidden]="!loginService.isLoggedIn" class="btn btn-outline-warning m-1" [routerLink]="['/trekks/update/'+trekk.id]">Update</button>
       </div>
     </div>

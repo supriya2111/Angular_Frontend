@@ -44,6 +44,8 @@ export class TrekkService {
 
 
   getTrekkById(trekkId: number) {
+    console.log(trekkId);
+    
     return this.http.get<Trekk>(this.config.apiEndpoint + `/${trekkId}`);
     // return this.http.get<Recipe>("http://localhost:8080/recipes/1");
 

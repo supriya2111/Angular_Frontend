@@ -54,14 +54,16 @@ export class TrekksComponent implements OnInit {
   deleteTrekk(id: number) {
     var answer: boolean = confirm("Do you want to Delete Trekk?");
     if (answer) {
-      this.trekkService.deleteTrekk(id).subscribe(
-        result => {
-          this.trekkList = [...result]
+      console.log(answer+""+id);
+      
+      this.trekkService.deleteTrekk(id).subscribe({
+       next:(result)  => {
+         this.loadTrekks();
         },
-        error => {
+        error:(error) => {
           console.log(error)
         }
-      );
+      } );
     }
   }
 
