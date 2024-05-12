@@ -11,7 +11,7 @@ export class LoginService {
 
   constructor(private http:HttpClient,private router:Router) { }
 
-  checkLogin(data: any) {
+  validateLogin(data: any) {
     console.log(data.username+ " "+data.password);
     
     return this.http.post("http://localhost:8081/login",data).subscribe(
@@ -33,6 +33,5 @@ export class LoginService {
 
   handleLogout(){
     this.isLoggedIn = false;
-
   }
 }

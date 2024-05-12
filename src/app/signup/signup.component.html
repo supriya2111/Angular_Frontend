@@ -1,76 +1,81 @@
-<div class="row m-5 p-5 justify-content-center align-items-center bg-secondary">
-  <div class="col">
-    <div [ngClass]="formStatus">
-      <div class="p-5 rounded bg-white myForm">
-        <h1 class="text-center">Sign Up</h1>
-        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7 col-lg-7 mt-2 mb-2">
+      <div id="container"></div>
+    </div>
+    <div class="col-md-5 col-lg-5">
+      <div class="row p-3  justify-content-center align-items-center">
+        <div class="col">
+          <div [ngClass]="formStatus">
+            <div class="p-4 rounded bg-white myForm">
+              <h1 class="text-center">Sign Up</h1>
+              <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="firstname">Enter First Name:</label>
+                  <input type="text" formControlName="firstname" id="firstname" placeholder="eg. Supriya"
+                    class="form-control px-4 py-2" />
+                  <div class="m-2">
+                    <small *ngIf="reactiveForm.get('firstname')?.errors?.['required'] && reactiveForm.get('firstname')?.touched">
+                      First name is required.
+                    </small>
+                    <small *ngIf="reactiveForm.get('firstname')?.errors?.['noSpaceAllowed'] && reactiveForm.get('firstname')?.touched">
+                      First name cannot contain spaces.
+                    </small>
+                  </div>
+                </div>
 
-          <div class="row mb-3 form-group mt-3">
-            <div class="col-md-6 mb-3">
-              <label for="firstname">Enter First Name:</label>
-              <input type="text" formControlName="firstname" id="firstname" placeholder="eg. Supriya"
-                class="form-control" />
-              <div class="m-2">
-                <small *ngIf="reactiveForm.get('firstname')?.errors?.['required'] && reactiveForm.get('firstname')?.touched">
-                  First name is required.
-                </small>
-                <small *ngIf="reactiveForm.get('firstname')?.errors?.['noSpaceAllowed'] && reactiveForm.get('firstname')?.touched">
-                  First name cannot contain spaces.
-                </small>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="lastname">Enter Last Name:</label>
-              <input type="text" formControlName="lastname" id="lastname" placeholder="eg. Sutar" class="form-control" />
-              <div>
-                <small *ngIf="reactiveForm.get('lastname')?.errors?.['required'] && reactiveForm.get('lastname')?.touched">
-                  Last name is required.
-                </small>
-                <small *ngIf="reactiveForm.get('lastname')?.errors?.['noSpaceAllowed'] && reactiveForm.get('lastname')?.touched">
-                  Last name cannot contain spaces.
-                </small>
-              </div>
+                <div class="form-group">
+                  <label for="lastname">Enter Last Name:</label>
+                  <input type="text" formControlName="lastname" id="lastname" placeholder="eg. Sutar"
+                    class="form-control px-4 py-2" />
+                  <div class="m-2">
+                    <small *ngIf="reactiveForm.get('lastname')?.errors?.['required'] && reactiveForm.get('lastname')?.touched">
+                      Last name is required.
+                    </small>
+                    <small *ngIf="reactiveForm.get('lastname')?.errors?.['noSpaceAllowed'] && reactiveForm.get('lastname')?.touched">
+                      Last name cannot contain spaces.
+                    </small>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="emailid">Enter Email:</label>
+                  <input type="email" formControlName="emailid" id="emailid" placeholder="eg. abc@gmail.com"
+                    class="form-control px-4 py-2" />
+                  <span style="color: red;" *ngIf="reactiveForm.get('emailid')?.invalid && reactiveForm.get('emailid')?.touched">
+                    Invalid email.
+                  </span>
+                </div>
+
+                <div class="form-group mt-2">
+                  <label for="contact">Enter Phone No.:</label>
+                  <input type="tel" formControlName="contact" id="contact" placeholder="eg. 7447882097"
+                    class="form-control px-4 py-2" />
+                </div>
+
+                <div class="form-group mt-2">
+                  <label for="username">Enter Username:</label>
+                  <input type="text" formControlName="username" id="username" placeholder="eg. Supriya"
+                    class="form-control px-4 py-2" />
+                </div>
+
+                <div class="form-group mt-2">
+                  <label for="password">Enter Password:</label>
+                  <input type="password" formControlName="password" id="password" placeholder="eg. Supriya@123"
+                    class="form-control px-4 py-2" />
+                </div>
+
+                <div class="form-group mt-3">
+                  <input class="btn btn-success px-4 py-2" type="submit" value="Submit" [disabled]="reactiveForm.invalid">
+                  <input class="btn btn-danger ms-2 px-4 py-2" type="reset" value="Clear" />
+                </div>
+                <p class="mt-3">
+                  Already registered? <span><a routerLink="/login">Sign In</a></span>
+                </p>
+              </form>
             </div>
           </div>
-
-          <div class="row mb-3 form-group mt-3">
-            <div class="col-md-6 mb-3">
-              <label for="emailid">Enter Email:</label>
-              <input type="email" formControlName="emailid" id="emailid" placeholder="eg. abc@gmail.com"
-                class="form-control" />
-              <span style="color: red;" *ngIf="reactiveForm.get('emailid')?.invalid && reactiveForm.get('emailid')?.touched">
-                Invalid email.
-              </span>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="contact">Enter Phone No.:</label>
-              <input type="tel" formControlName="contact" id="contact" placeholder="eg. 7447882097" class="form-control" />
-            </div>
-          </div>
-
-          <div class="row mb-3 form-group mt-3">
-            <div class="col-md-6 mb-3">
-              <label for="username">Enter Username:</label>
-              <input type="text" formControlName="username" id="username" placeholder="eg. Supriya" class="form-control" />
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="password">Enter Password:</label>
-              <input type="password" formControlName="password" id="password" placeholder="eg. Supriya@123" class="form-control" />
-            </div>
-          </div>
-
-          <div class="row mb-3 form-group mt-1">
-            <div class="col-md-6 mb-3">
-              <input class="btn btn-success" type="submit" value="Submit" [disabled]="reactiveForm.invalid">
-            </div>
-            <div class="col-md-6 text-md-right">
-              <input class="btn btn-danger" type="reset" value="Clear" />
-            </div>
-            <p class="mt-2">
-              Already registered? <span><a routerLink="/login">Sign In</a></span>
-            </p>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

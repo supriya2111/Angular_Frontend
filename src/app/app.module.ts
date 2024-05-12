@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { TrekksComponent } from './trekks/trekks.component';
 import { AddTrekkComponent } from './trekks/add-trekk/add-trekk.component';
 import { SignupComponent } from './signup/signup.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './home/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { TrekkCardComponent } from './trekks/trekk-card/trekk-card.component';
 import { TrekkDataComponent } from './trekks/trekk-data/trekk-data.component';

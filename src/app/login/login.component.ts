@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   
-  async handleLogin(){
-   await this.loginService.checkLogin(this.loginDetails);
+  async Login(){
+   await this.loginService.validateLogin(this.loginDetails);
     console.log(this.loginDetails.username, this.loginDetails.password); 
   }
 

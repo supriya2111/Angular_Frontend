@@ -59,7 +59,6 @@ export class AddTrekkComponent implements OnInit {
       this.trekkService.addTrekk(this.reactiveForm.value).subscribe({
         next:(val:any) => {
          alert("Trekk added successfully")
-          // this.coreService.openSnackBar('employee deleted','done')
           this.route.navigate(['trekks']); 
         },
         error: (err:any) => {

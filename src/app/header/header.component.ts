@@ -10,17 +10,13 @@ import { InitService } from '../init.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private initService: InitService,public loginService:LoginService,public router:Router) {
-    console.log(initService.config)
-     console.log(loginService.isLoggedIn);
-     
+  constructor(public loginService:LoginService,public router:Router) {
+     console.log(loginService.isLoggedIn);  
    }
 
   ngOnInit(): void {
   }
 
-
-  
   logout(){
    
     if(confirm('Do you want to logout'))

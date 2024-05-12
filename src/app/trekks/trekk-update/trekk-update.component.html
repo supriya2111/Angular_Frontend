@@ -43,11 +43,13 @@
             
             <div class="row">
                 
-                <div class="col mt-3 text-center">
-                    <input type="submit" class="btn btn-primary " value="Submit" [disabled]="formData.invalid">
+                <div class="col-md-6 mt-3 ">
+                    <input type="submit" class="btn btn-primary " value="Update" [disabled]="formData.invalid">
                         
                 </div>
-                
+                <div class="col-md-6 mt-3 ">
+                    <button class="btn btn-warning" routerLink="/trekks">Back</button>
+                </div>
             </div>
         </form>
 

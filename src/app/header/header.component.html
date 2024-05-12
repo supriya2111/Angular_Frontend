@@ -24,7 +24,7 @@
       
       <!-- Login and Sign Up Buttons -->
       <div class="d-flex mx-4">
-        <button  *ngIf="!loginService.isLoggedIn" class="btn btn-lg btn-primary mx-2" [routerLink]="'login'">Login</button>
+        <button  *ngIf="!loginService.isLoggedIn" class="btn btn-lg btn-primary mx-2" [routerLink]="'login'">Sign In</button>
         <button  *ngIf="!loginService.isLoggedIn" class="btn btn-lg btn-info mx-2" [routerLink]="'signup'">Sign Up</button>
         <button *ngIf="loginService.isLoggedIn" class="btn btn-lg btn-danger mx-2" (click)="logout()">Logout</button>
       </div> 

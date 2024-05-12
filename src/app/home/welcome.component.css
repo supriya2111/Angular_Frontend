@@ -1,0 +1,26 @@
+.backimg {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('https://cdn.dribbble.com/users/441305/screenshots/11835783/media/473e35fcb66520ea65e18fbbb83c6648.png?resize=768x576&vertical=center');
+  background-size: cover; /* Ensure the background image covers the entire container */
+}
+
+  .text-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .btn-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .backimg{
+      width: 100vw; /* Take full width on smaller screens */
+      height: 50vh; /* Adjust height accordingly */
+    }
+  }
+  

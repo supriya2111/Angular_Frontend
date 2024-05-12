@@ -40,7 +40,7 @@ export class TrekkUpdateComponent implements OnInit {
             // Assuming trekkData is fetched from the server and contains a date in string format
             this.trekkData.trekkDate = new Date(this.trekkData.trekkDate).toISOString().split('T')[0];
 
-            console.log("trekkdata", this.trekkData); // Log inside the subscribe to ensure it's logged after data retrieval
+            console.log("trekkdata", this.trekkData); 
         });
     });
     
@@ -48,6 +48,8 @@ export class TrekkUpdateComponent implements OnInit {
 
 
   handleUpdateData() {
+    console.log(this.trekkData);
+    
     this.trekkService.updateTrekk(this.trekkData).subscribe(
       data => {
         alert("Trekk Updated")

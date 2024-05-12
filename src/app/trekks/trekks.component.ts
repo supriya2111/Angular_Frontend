@@ -12,10 +12,8 @@ export class TrekksComponent implements OnInit {
 
   trekkList: Trekk[] = [];
   listLoaded: boolean = false;
-  subscription!: Subscription;
 
 
-  // Creating a stream
   trekkLList$ = this.trekkService.trekks$
 
   constructor(private trekkService: TrekkService) {
@@ -24,18 +22,11 @@ export class TrekksComponent implements OnInit {
 
   ngOnInit() {
 
-    // We need to use subscribe method to read the stream of data as Angular uses RxJs which has Observable as a object
-    // Helps in getting data continuosly.
     this.trekkService.trekks$.subscribe((data: any) => {
       this.trekkList = data;
       this.listLoaded = true
     })
 
-    // This way we can achieve unsubscribe in ngOnDestroy
-    // this.subscription = this.recipeService.getRecipes().subscribe((data: any) => {
-    //   this.recipeList = data.recipes;
-    //   this.listLoaded = true
-    // })
   }
 
   loadTrekks() {
@@ -44,11 +35,6 @@ export class TrekksComponent implements OnInit {
       this.trekkList = data;
       this.listLoaded = true
     })
-  }
-
-  addTrekk() {
-   
-
   }
 
   deleteTrekk(id: number) {
@@ -66,11 +52,5 @@ export class TrekksComponent implements OnInit {
       } );
     }
   }
-
-  ngOnDestroy() {
-    if (this.subscription)
-      this.subscription.unsubscribe();
-  }
-
 
 }

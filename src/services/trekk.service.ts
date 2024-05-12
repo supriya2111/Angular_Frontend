@@ -44,6 +44,8 @@ export class TrekkService {
 
   updateTrekk(trekk: Trekk)
   {
+    console.log("Trekk",trekk);
+    
     return this.http.put<Trekk[]>(this.config.apiEndpoint, trekk);
   }
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddTrekkComponent } from './trekks/add-trekk/add-trekk.component';
 import { LoginComponent } from './login/login.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './home/welcome.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddTrekkGuard } from './guards/add-trekk.guard';
 import { TrekksComponent } from './trekks/trekks.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path:"trekks/add", component:AddTrekkComponent
-  
+     ,canActivate: [AddTrekkGuard]
   },
   {
     // This is dynamic path, which takes recipeNumber dynamically and sends it to the Component
