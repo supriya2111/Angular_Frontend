@@ -21,9 +21,17 @@ export class HeaderComponent implements OnInit {
 
 
   
-  handleLogout(){
-    this.loginService.handleLogout();
-    this.router.navigateByUrl("/trekks");
+  logout(){
+   
+    if(confirm('Do you want to logout'))
+    {
+        this.loginService.handleLogout();
+        this.router.navigateByUrl("/trekks");
+    }
+    else{
+      this.router.navigateByUrl("/trekks");
+    }
+  
   }
 
 }

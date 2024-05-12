@@ -16,7 +16,7 @@ import { TrekkUpdateComponent } from './trekks/trekk-update/trekk-update.compone
 import { RouterModule } from '@angular/router';
 import { APP_CONFIG, APP_SERVICE_CONFIG } from './app.config';
 import { InitService } from './init.service';
-import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -40,7 +40,7 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    MatButtonModule
+  
    
   ],
   providers: [

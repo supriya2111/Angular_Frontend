@@ -1,22 +1,25 @@
-<div class="container p-5 mt-sm-5" style="border: red solid 1px;">
-    <div class="row my-sm-5">
-      <div class="col-12 col-lg-5">
-        <img src="https://uploads-ssl.webflow.com/619d13e80ade2262a82fd234/619e65309701c11236eecda3_undraw_adventure_map_hnin%20(2)-p-800.png " alt="" class="img-fluid border border-primary">
+<div class="container mt-sm-5" style="border: red solid 1px;">
+  <div class="row my-sm-5">
+    <div class="col-md-6 col-lg-5">
+      <div id="container"></div>
+    </div>
+    <div class="col-md-6 col-lg-6 offset-lg-1 p-5">
+      <div class="display-3 text-center mb-5 text-success">Sign In</div>
+      <div class="mb-5 lead">
+        <label for="staticEmail" class="col-form-label">Username :</label>
+        <input [(ngModel)]="loginDetails.username" type="text" class="form-control" id="staticEmail">
       </div>
-      <div class="offset-lg-1 col-12 col-lg-6  p-5 " >
-        <div class="display-3 text-center mb-5 text-success">Welcome </div>
-
-        <div class="mb-4 lead">
-          <label for="staticEmail" class="col-form-label">Email</label>
-          <input [(ngModel)]="loginDetails.email" type="text" class="form-control" id="staticEmail">
-        </div>
-        <div class="mb-4 lead">
-          <label for="inputPassword" class="col-form-label">Password</label>
-          <input [(ngModel)]="loginDetails.password" type="password" class="form-control" id="inputPassword">
-        </div>
-        <div class="text-center">
-          <button class="btn btn-outline-success" (click)="handleLogin()">Login</button>
+      <div class="mb-4 lead">
+        <label for="inputPassword" class="col-form-label">Password :</label>
+        <input [(ngModel)]="loginDetails.password" type="password" class="form-control" id="inputPassword">
+      </div>
+      <div class="text-center">
+        <button class="btn btn-outline-primary" (click)="handleLogin()">Login</button>
+        <div class="signup d-flex justify-content-center mt-3">
+          <span class="mr-2">Don't have an Account?</span>
+          <a routerLink="/signup">SignUp</a>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -12,7 +12,7 @@ import { LoginService } from './services/login.service';
 export class LoginComponent implements OnInit {
 
   loginDetails = {
-    email : "",
+    username : "",
     password : ""
   }
 
@@ -21,14 +21,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   
-  handleLogin(){
-    this.loginService.checkLogin(this.loginDetails.email, this.loginDetails.password);
-    console.log(this.loginDetails.email, this.loginDetails.password);
-    
-    if(this.loginService.isLoggedIn)
-      this.router.navigateByUrl("/trekks");
-    else
-      alert("Login Failed!");
+  async handleLogin(){
+   await this.loginService.checkLogin(this.loginDetails);
+    console.log(this.loginDetails.username, this.loginDetails.password); 
   }
 
 }

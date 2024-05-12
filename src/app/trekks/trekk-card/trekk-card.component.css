@@ -1,0 +1,7 @@
+.list-group-item > * {
+    color: inherit; /* Set the default color */
+  }
+  
+  .list-group-item > *:not(strong) {
+    color: red; /* Set the dynamically applied color for text nodes excluding those within <strong> tags */
+  }

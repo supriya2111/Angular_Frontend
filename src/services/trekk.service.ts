@@ -12,14 +12,11 @@ export class TrekkService {
 
   trekks$ = this.http.get<Trekk[]>(this.config.apiEndpoint,{
     headers: new HttpHeaders({
-     // "Jayesh-Header": "rkfjtoiewfksnkjfnr W3N42J323 RM23OJR5H32O4ITHJ34 GKERNV3OKJ4TNGRFJND"
+   
     })
   }).pipe(
-    // Error Handling in RxJs
-    // Just like catch in Promise of JS
     catchError((error) => {
       console.log(error)
-      // We need to return an empty Array as it is expecting an array
       return of([]);
     })
   )
@@ -35,20 +32,12 @@ export class TrekkService {
   constructor(private http: HttpClient, @Inject(APP_SERVICE_CONFIG) private config: any) { }
 
   getTrekks() :Observable<Trekk[]>{
-
-    // Using the Http Client to get the request and response from the API
-    // We need to provide the Interface of which type the data is going to be received from the backend or the API
-    return this.http.get<Trekk[]>(this.config.apiEndpoint);
-    
+    return this.http.get<Trekk[]>(this.config.apiEndpoint); 
   }
-
-
   getTrekkById(trekkId: number) {
     console.log(trekkId);
     
     return this.http.get<Trekk>(this.config.apiEndpoint + `/${trekkId}`);
-    // return this.http.get<Recipe>("http://localhost:8080/recipes/1");
-
     console.log(this.config.apiEndpoint + `/${trekkId}`);
     
   }

@@ -11,6 +11,8 @@ import { TrekkService } from 'src/services/trekk.service';
 })
 export class TrekkCardComponent implements OnInit {
   
+  color:string = 'red';
+
   @Input()
   trekkList: Trekk[] =[];
 
@@ -37,5 +39,10 @@ export class TrekkCardComponent implements OnInit {
     this.trekkToDelete.emit(id);
   }
 
+  
+  getDetailsColor() {
+    return this.color;
+  }
 
+ 
 }
