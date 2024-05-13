@@ -7,10 +7,7 @@ import { APP_SERVICE_CONFIG } from 'src/app/app.config';
   providedIn: 'root'
 })
 export class RegisterService {
-  constructor(private http:HttpClient, @Inject(APP_SERVICE_CONFIG) private config: any ) { 
-
-  }
-
+  constructor(private http:HttpClient, @Inject(APP_SERVICE_CONFIG) private config: any ) { }
 
   registerUser(data:any):Observable<any>{
     console.log("Formdata"+data.username+" "+data.roleid);

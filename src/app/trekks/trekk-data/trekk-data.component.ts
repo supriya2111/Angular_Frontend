@@ -10,9 +10,7 @@ import { TrekkService } from 'src/services/trekk.service';
 })
 export class TrekkDataComponent implements OnInit {
   trekkData!: Trekk;
-
-  // Activated Routes are important for accessing the data of the Routes which is send by the programmer
-  // It is also referred as Dynamic Routing
+  
   constructor(private route: ActivatedRoute,private trekkService : TrekkService) { }
 
   ngOnInit() {

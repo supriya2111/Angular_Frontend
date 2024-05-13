@@ -15,9 +15,6 @@ import { TrekkDataComponent } from './trekks/trekk-data/trekk-data.component';
 import { TrekkUpdateComponent } from './trekks/trekk-update/trekk-update.component';
 import { RouterModule } from '@angular/router';
 import { APP_CONFIG, APP_SERVICE_CONFIG } from './app.config';
-import { InitService } from './init.service';
-
-
 
 @NgModule({
   declarations: [

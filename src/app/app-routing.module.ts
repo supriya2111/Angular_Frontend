@@ -22,10 +22,9 @@ const routes: Routes = [
      ,canActivate: [AddTrekkGuard]
   },
   {
-    // This is dynamic path, which takes recipeNumber dynamically and sends it to the Component
     path: "trekks/:trekkNumber",
     component: TrekkDataComponent
-},
+   },
   {
     path:"login" ,component:LoginComponent
   },

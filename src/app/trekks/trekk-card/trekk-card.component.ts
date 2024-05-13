@@ -35,7 +35,6 @@ export class TrekkCardComponent implements OnInit {
 
   deleteTrekk(id:number){
     console.log("id"+id);
-    
     this.trekkToDelete.emit(id);
   }
 

@@ -12,13 +12,9 @@ export class TrekksComponent implements OnInit {
 
   trekkList: Trekk[] = [];
   listLoaded: boolean = false;
-
-
   trekkLList$ = this.trekkService.trekks$
 
-  constructor(private trekkService: TrekkService) {
-
-  }
+  constructor(private trekkService: TrekkService) { }
 
   ngOnInit() {
 
@@ -30,7 +26,6 @@ export class TrekksComponent implements OnInit {
   }
 
   loadTrekks() {
-    console.log("Loading Trekks....")
     this.trekkService.trekks$.subscribe((data: any) => {
       this.trekkList = data;
       this.listLoaded = true

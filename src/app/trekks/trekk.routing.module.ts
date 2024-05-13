@@ -14,7 +14,6 @@ const routes :Routes = [
 
 @NgModule({
     imports: [
-        // forRoot takes the variables which has the routes information inside it
         RouterModule.forRoot(routes),
         RouterModule,
         FormsModule
