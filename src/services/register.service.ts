@@ -11,6 +11,8 @@ export class RegisterService {
 
   registerUser(data:any):Observable<any>{
     console.log("Formdata"+data.username+" "+data.roleid);
-    return this.http.post('http://localhost:8081/register',data);
+   // return this.http.post('http://localhost:8081/register',data);
+   //return this.http.post('http://localhost:8083/register',data);
+   return this.http.post('http://localhost:8082/register',data);
   }
 }
